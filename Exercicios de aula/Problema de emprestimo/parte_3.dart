@@ -11,8 +11,7 @@ void inicializarFinanciamento(double valorInicial, int numParcelas, double juros
 }
 
 double proximaParcela() {
-  p = p * (1 + j);
-  return p;
+  return p * (1 + j);
 }
 
 void main() {
