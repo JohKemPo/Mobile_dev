@@ -6,7 +6,7 @@ void main() {
   double p = s; // Primeira parcela é igual ao valor da primeira parcela
   print('Parcela 1: R\$ ${p.toStringAsFixed(2)}');
   
-  for (int i = 2; i <= n; i++) {
+  for (int i = 1; i <= n; i++) {
     p = p * (1 + j); // Calcula o valor da nova parcela
     print('Parcela $i: R\$ ${p.toStringAsFixed(2)}');
   }
