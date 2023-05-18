@@ -13,8 +13,9 @@ class Emprestimo {
 
 void proximaParcela(Emprestimo emprestimo) {
   if (emprestimo.parcelaAtual < emprestimo.numParcelas) {
-    emprestimo.parcelaAtual++;
     double valorAtual = emprestimo.valor * pow(1 + emprestimo.juros, emprestimo.parcelaAtual);
+    emprestimo.parcelaAtual++;
+    
     print("Empréstimo de ${emprestimo.valor.toStringAsFixed(2)} reais, ${emprestimo.numParcelas} parcelas, juros de ${emprestimo.juros.toStringAsFixed(2)}%: Parcela ${emprestimo.parcelaAtual} - ${valorAtual.toStringAsFixed(2)} reais");
     // print("Emprestimo ${}: parcela ${emprestimo.parcelaAtual} - ${valorAtual.toStringAsFixed(2)} eh ")
   }
