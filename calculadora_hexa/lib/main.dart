@@ -112,7 +112,7 @@ class _CalcHexaState
         title: const Text('Calculadora Hexadecimal'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -140,67 +140,77 @@ class _CalcHexaState
                 ),
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _buildHexButton('0'),
-                _buildHexButton('1'),
-                _buildHexButton('2'),
-                _buildHexButton('3'),
+                _HexButton('0'),
+                _HexButton('1'),
+                _HexButton('2'),
+                _HexButton('3'),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _buildHexButton('4'),
-                _buildHexButton('5'),
-                _buildHexButton('6'),
-                _buildHexButton('7'),
+                _HexButton('4'),
+                _HexButton('5'),
+                _HexButton('6'),
+                _HexButton('7'),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _buildHexButton('8'),
-                _buildHexButton('9'),
-                _buildHexButton('A'),
-                _buildHexButton('B'),
+                _HexButton(''),
+                _HexButton('8'),
+                _HexButton('9'),
+                _HexButton(''),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _buildHexButton('C'),
-                _buildHexButton('D'),
-                _buildHexButton('E'),
-                _buildHexButton('F'),
+                _HexButton('A'),
+                _HexButton('B'),
+                _HexButton('C'),
+                _HexButton(''),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _buildOperatorButton('+'),
-                _buildOperatorButton('-'),
-                _buildOperatorButton('*'),
-                _buildOperatorButton('/'),
+                _HexButton('D'),
+                _HexButton('E'),
+                _HexButton('F'),
+                _HexButton(''),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _OperatorButton('+'),
+                _OperatorButton('-'),
+                _OperatorButton('*'),
+                _OperatorButton('/'),
+              ],
+            ),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
                   onPressed: _calcularresultgit,
-                  child: const Text('='),
+                  child: const Text('Enter'),
                 ),
                 ElevatedButton(
                   onPressed: _limpar,
-                  child: const Text('C'),
+                  child: const Text('Clear'),
                 ),
               ],
             ),
@@ -210,21 +220,21 @@ class _CalcHexaState
     );
   }
 
-  Widget _buildHexButton(String digito) {
+  Widget _HexButton(String digito) {
     return ElevatedButton(
       onPressed: () => _adicionarDigito(digito),
       child: Text(digito),
     );
   }
 
-  Widget _buildOperatorButton(String operador) {
+  Widget _OperatorButton(String operador) {
   return ElevatedButton(
-    onPressed: () => _adicionarOperador(operador),
+    onPressed: () => _addOperador(operador),
     child: Text(operador),
   );
   }
 
-  void _adicionarOperador(String operador) {
+  void _addOperador(String operador) {
     setState(() {
       _expressao += operador;
     });
