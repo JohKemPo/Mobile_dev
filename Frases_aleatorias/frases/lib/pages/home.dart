@@ -14,7 +14,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   String _msg = "Clique abaixo para gerar a frase";
 
-  List<String> messages = ["Bom dia!", "Boa tarde!", "Teste 2", "Nova frase"];
+  List<String> messages = ["Bom dia!", "Boa tarde!", "Nova frase"];
 
   void _generateText() {
     int i = Random().nextInt(messages.length);
@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Image.asset(
-                      "../assets/images/title.png",
+                      "../../assets/images/title.png",
                       fit: BoxFit.fill,
                       scale: 1.5,
                     ),
